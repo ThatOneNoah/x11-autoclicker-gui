@@ -1,0 +1,32 @@
+[package]
+name = "x11-autoclicker-gui"
+version = "0.1.0"
+edition = "2021"
+license = "MIT"
+description = "Precision X11 autoclicker with decimal CPS and duty cycle, hotkey toggle, and GUI."
+
+[dependencies]
+anyhow = "1"
+spin_sleep = "1.1"
+x11 = { version = "2.21", features = ["xlib", "xtest"] }
+eframe = "0.27"
+# eframe re-exports egui as eframe::egui
+
+[package.metadata.deb]
+maintainer = "Noah <noah@example.com>"
+
+section = "utils"
+priority = "optional"
+# Runtime shared-lib deps for X11/XTest:
+depends = ["libx11-6", "libxtst6"]
+assets = [
+  ["packaging/x11-autoclicker-gui.desktop", "usr/share/applications/x11-autoclicker-gui.desktop", "644"],
+  ["packaging/x11-autoclicker-gui.png", "usr/share/pixmaps/x11-autoclicker-gui.png", "644"]
+]
+
+[[bin]]
+name = "x11-autoclicker-gui"
+path = "src/main.rs"
+
+
+

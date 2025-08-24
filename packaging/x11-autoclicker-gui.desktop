@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=X11 Autoclicker (GUI)
+Comment=Precision X11 autoclicker with decimal CPS and duty cycle
+Exec=x11-autoclicker-gui
+Icon=x11-autoclicker-gui
+Terminal=false
+Categories=Utility;
